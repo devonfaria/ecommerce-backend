@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
   try {
     const categories = await Category.findAlls();
     res.json(categories);
-  } catch {
+  } catch (err) {
     res.status(400).json(err);
   }
 });
@@ -53,7 +53,6 @@ router.post('/', async (req, res) => {
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
   Category.update({
-    // All the fields you can update and the data attached to the request body.
     category_name: req.body.category_name,
   },
     {
