@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
   try {
-    const products = await Product.findAlls();
+    const products = await Product.findAll();
     res.json(products);
   } catch (err) {
     res.status(400).json(err);
@@ -24,15 +24,9 @@ router.get('/:id', async (req, res) => {
       include: [
         {
           model: Category,
-          attributes: {
-            exclude: [id]
-          }
         },
         {
           model: Tag,
-          attributes: {
-            exclude: [id]
-          }
         }],
     });
     // Conditional to check if product was found
