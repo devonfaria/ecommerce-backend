@@ -34,7 +34,7 @@ Product.init(
         isNumeric: true,
       },
     },
-    categoryId: {
+    category_id: {
       type: DataTypes.INTEGER,
       foreignKey: true,
       references: {

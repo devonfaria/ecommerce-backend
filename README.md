@@ -15,31 +15,19 @@
 
 ## Description
 
-Welcome to the Employee Tracker, where you can see comprehensive lists of your company's departments, job roles, and employees. Additionally, you can add to any of these lists, and make update to employee roles as necessary, all from your command line. SImple installation, and even simpler interface. 
+Welcome to the E-Commerce Backend, where you can dynamically create, edit, update, and delete products, categories, and product tags to your database with ease. With the addition of front-end fetch requests, you can easily manage your online store without concern of invalid entries.
+
+This application restricts entries into the database to prevent faulty information in your system. For example, you cannot enter products without a name, or update the stock of an item to a non-integer. 
 
 ## Visuals
 
 The following image is of the website where you will download Node JS, if necessary.
 
-![node j s website](./images/Download-Node-js.png)
+![node j s website](./Assets/images/Download-Node-js.png)
+V
+This is a backend application, meaning that there are no visuals to share except a walkthrough video to show you what you can expect in your terminal to show that things are linked correctly. 
 
-This is the appearance of the main menu in the terminal.
-
-![main menu](./images/main-menu.png)
-
-This is the display for the departments table, with a unique ID for each.
-
-![departments table display](./images/departments.png)
-
-This is the display for the roles table, with unique ID, title, department, and salary fields.
-
-![roles table display](./images/roles.png)
-
-Thhis is the display for the employee table, with unique ID, first, last, title, and salary.
-
-![employee table display](./images/employees.png)
-
-[Click here for a video explaining installation and initalizing the application](https://drive.google.com/drive/folders/1t82iAdKtW-BBx0jmapCqC82QJS31dJ_F?usp=sharing)
+[Click here for a video explaining installation and testing of the application](https://drive.google.com/file/d/18LL3mpnkWB_sBItLjntgRZ4OAQmvft6M/view?usp=sharing)
 
 ## Installation
 
@@ -49,7 +37,7 @@ Then, clone this repository to your local computer, and open up the folder in yo
 
 `npm install`
 
-This will download the node modules MySQL, Express, and Inquirer that this application needs to run on your local computer. After install, you will run the following command to open a MySQL shell in your terminal: 
+This will download the node modules MySQL2, Express, Nodemon, Sequelize, and DOTENV that this application needs to run on your local computer. After install, you will run the following command to open a MySQL shell in your terminal: 
 
 `mysql -u root` 
 
@@ -63,22 +51,20 @@ You can exit the shell by entering:
 
 And then type:
 
-```npm start```
+`nodemon`
 
-If you get a message in the terminal saying "Connected to the emptracker_db database.
-Welcome to the Employee Tracker. Please enter an action below.", then you have installed the program correctly.  
+If the last message in the terminal says "App listening on port 3001!", then you have installed the program correctly. If you ever need to shut down this server application use this command:
 
-The Inquirer module will bring up the main menu of the Employee Tracker. When adding data, simply type your response to each question in the terminal and hit enter. You can navigate menus by pressing the numbers associated with each option and hitting enter.
+`^C`
 
-Even directly after an update, you can immediately see the changes when viewing your lists. Choose 'quit' on the main menu when finished.
-
-[Click here for a video explaining installation and initalizing the application](https://drive.google.com/drive/folders/1t82iAdKtW-BBx0jmapCqC82QJS31dJ_F?usp=sharing)
+[Click here for a video explaining installation and testing of the application](https://drive.google.com/file/d/18LL3mpnkWB_sBItLjntgRZ4OAQmvft6M/view?usp=sharing)
 
 ## Technologies
 
 * Node JS
-* Inquirer module
 * MySql2
+* Sequelize
+* DOTENV
 * Express
 
 ## Licenses
@@ -95,4 +81,4 @@ Devon Faria
 
 ## Contributions
 
-Thanks to the UNC Bootcamp for a great week!
+Thanks you to my tutor, Evan Hardek, for helping me understand Sequelize modulization and how to navigate it successfully.
