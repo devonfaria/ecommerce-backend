@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
   try {
     const products = await Product.findAll({});
     res.json(products);
-  } catch {
+  } catch (err) {
     res.status(400).json(err);
   }
 });
@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
           model: Category,
         },
         {
-          model: Tag,
+          model: Tag, through: ProductTag
         }],
     });
     // Conditional to check if product was found
@@ -52,9 +52,12 @@ router.post('/', (req, res) => {
   */
   Product.create(req.body)
     .then((product) => {
+      console.log(req.body.tagIds);
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
       if (req.body.tagIds.length) {
         const productTagIdArr = req.body.tagIds.map((tag_id) => {
+          console.log(product.id);
+          console.log(tag_id);
           return {
             product_id: product.id,
             tag_id,
